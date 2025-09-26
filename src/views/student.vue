@@ -1,9 +1,9 @@
 <template>
   <div class="container mt-4">
-    <h2 class="mb-3">รายชื่อลูกค้า</h2>
+    <h2 class="mb-3">student</h2>
     
     <div class="mb-3">
-      <a class="btn btn-primary" href="/add_customer" role="button">Add+</a>
+      <a class="btn btn-primary" href="/add_student" role="button">Add+</a>
     </div>
 
     <!-- ตารางแสดงข้อมูลลูกค้า -->
@@ -13,21 +13,21 @@
       <th>ID</th>
       <th>ชื่อ</th>
       <th>นามสกุล</th>
+      <th>อีเมล</th>
       <th>เบอร์โทร</th>
-      <th>ชื่อผู้ใช้</th>
       <th>ลบ</th>
     </tr>
   </thead>
   <tbody>
-    <tr v-for="customer in customers" :key="customer.customer_id">
-      <td>{{ customer.customer_id }}</td>
-      <td>{{ customer.firstName }}</td>
-      <td>{{ customer.lastName }}</td>
+    <tr v-for="student in students" :key="student.student_id">
+      <td>{{ customer.student_id }}</td>
+      <td>{{ customer.first_Name }}</td>
+      <td>{{ customer.last_Name }}</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+      <td>{{ customer.email }}</td>
       <td>{{ customer.phone }}</td>
-      <td>{{ customer.username }}</td>
       <!--เพิ่มปุ่มลบ -->
       <td>  
-  <button class="btn btn-danger btn-sm" @click="deleteCustomer(customer.customer_id)">ลบ</button>
+  <button class="btn btn-danger btn-sm" @click="deleteCustomer(student.student_id)">ลบ</button>
 </td>
     </tr>
     
@@ -58,7 +58,7 @@ export default {
     // ฟังก์ชันดึงข้อมูลจาก API ด้วย GET
     const fetchCustomers = async () => {
       try {
-        const response = await fetch("http://localhost/ict12367_lab168/php_api/show_customer.php", {
+        const response = await fetch("http://localhost/projectgay-67708691/php_api/api_student.php", {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -88,12 +88,12 @@ export default {
     });
 
 
-    //ฟังก์ชั่นการลบข้อมูล ***
+    //ฟังก์ชั่นการลบข้อมูล ***                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 const deleteCustomer = async (id) => {
   if (!confirm("คุณต้องการลบข้อมูลนี้ใช่หรือไม่?")) return;
 
   try {
-    const response = await fetch("http://localhost/projectgay-67708691/php_api/api_customer.php", {
+    const response = await fetch("http://localhost/projectgay-67708691/php_api/api_student.php", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"

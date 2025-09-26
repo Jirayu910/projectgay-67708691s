@@ -17,6 +17,10 @@
         <li class="nav-item">
                   <a class="nav-link" href="/customer">Customer</a>
         </li>
+        
+        <li class="nav-item">
+                  <a class="nav-link" href="/student">student</a>
+        </li>
          <li class="nav-item">
                   <a class="nav-link" href="/product">product</a>
         </li>
@@ -28,7 +32,7 @@
             <li><a class="dropdown-item" href="#">Login</a></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="aadd_customer">Register</a></li>
+            <li><a class="dropdown-item" href="add_customer">Register</a></li>
           </ul>
         </li>
        <li class="nav-item">
